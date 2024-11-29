@@ -41,3 +41,6 @@ Running project:
 
 Homepage:
 ![image](https://github.com/user-attachments/assets/02c1c6a8-91eb-43b2-b992-812c6becff31)
+
+Video:
+https://www.linkedin.com/posts/luis-fernando-m-bezerra-37b175b0_flask-opensource-python-activity-7268325753040117760-afhe?utm_source=share&utm_medium=member_desktop
