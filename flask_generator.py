@@ -6,8 +6,7 @@ project_structure = {
     "application": {
         "static": {
             "css": {
-                "style.css": """
-body {
+                "style.css": """body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
@@ -57,8 +56,7 @@ footer {
             "images": {}
         },
         "templates": {
-            "layout.html": """
-<!DOCTYPE html>
+            "layout.html": """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -97,8 +95,7 @@ footer {
 
 """
         },
-        "__init__.py": """
-from flask import Flask
+        "__init__.py": """from flask import Flask
 from config import Config
 
 app = Flask(__name__)
@@ -106,8 +103,7 @@ app.config.from_object(Config)
 
 from . import routes
 """,
-        "logger_config.py": """
-import logging
+        "logger_config.py": """import logging
 
 def setup_logger(name):
     logging.basicConfig(
@@ -121,8 +117,7 @@ def setup_logger(name):
     logger = logging.getLogger(name)
     return logger
 """,
-        "routes.py": """
-from flask import render_template
+        "routes.py": """from flask import render_template
 from . import app
 from datetime import datetime
 from .logger_config import setup_logger
@@ -155,8 +150,7 @@ __pycache__/
 env/
 venv/
 """,
-    "config.py": """
-import os
+    "config.py": """import os
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -165,8 +159,7 @@ class Config:
     SECRET_KEY = os.getenv('SECRET_KEY')
 """,
     "Procfile": "web: gunicorn run:app\n",
-    "Dockerfile": """
-FROM python:
+    "Dockerfile": """FROM python
 
 WORKDIR /application
 
@@ -182,8 +175,7 @@ ENV FLASK_ENV=production
 CMD ["gunicorn", "-b", "0.0.0.0:5000", "run:app"]
 """,
     "requirements.txt": "Flask\ngunicorn\npython-dotenv\n",
-    "run.py": """
-from application import app
+    "run.py": """from application import app
 
 if __name__ == '__main__':
     # app.run(host="0.0.0.0", port=3000)
